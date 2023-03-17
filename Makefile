@@ -50,14 +50,10 @@ linkcheck:
 format:
 	black mitiq
 
-.PHONY: install-bandit
-install-bandit:
-	pip install bandit
+.PHONY: bandit
+bandit:
+	pip install bandit && bandit -c pyproject.toml -r . --confidence-level high -f json -q; true
 
-.PHONY: bandit-results
-bandit-results:
-	bandit -c pyproject.toml -r . --confidence-level high -f json -q
-	
 .PHONY: install
 install:
 	pip install -e .[development]

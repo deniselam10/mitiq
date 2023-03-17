@@ -24,9 +24,7 @@ jobs:
           make install requirements
 
       - name: Check code security with Bandit
-        run: |
-          make install-bandit
-          make bandit-results
+        run: make bandit
 
       - name: Check types with mypy
         run: make check-types

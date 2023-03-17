@@ -33,9 +33,7 @@ jobs:
         run: make check-format
 
       - name: Check code security with Bandit
-        run: |
-          make bandit
-          make bandit-results
+        run: make bandit
 
   docs:
     runs-on: ubuntu-latest
