@@ -70,8 +70,8 @@ test-pyquil:
 test-all:
 	pytest -n auto -v --cov=mitiq --cov-report=term --cov-report=xml
 
-.PHONY: install-bandit
-install-bandit:
+.PHONY: bandit
+bandit:
 	pip install bandit
 
 .PHONY: bandit-results
