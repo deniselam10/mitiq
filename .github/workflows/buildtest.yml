@@ -23,6 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           make install requirements
 
+      - name: Check code security with Bandit
+        run: |
+          make bandit
+          make bandit-results
+
       - name: Check types with mypy
         run: make check-types
 
@@ -31,8 +36,3 @@ jobs:
 
       - name: Check code style with Black
         run: make check-format
-
-      - name: Check code security with Bandit
-        run: |
-          make bandit
-          make bandit-results
