@@ -25,7 +25,7 @@ jobs:
 
       - name: Check code security with Bandit
         run: |
-          make bandit
+          make install-bandit
           make bandit-results
 
       - name: Check types with mypy
