@@ -34,4 +34,4 @@ exclude = [
 
 exclude_dirs = [
    "mitiq/interface/mitiq_pyquil/tests"
-]
+]`
