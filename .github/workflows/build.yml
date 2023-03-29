@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - v0.24.0-branch
 
 jobs:
   validate:
@@ -17,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
@@ -32,6 +33,9 @@ jobs:
       - name: Check code style with Black
         run: make check-format
 
+      - name: Check code security with Bandit
+        run: make bandit
+
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +44,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install Python dependencies
         run: |
@@ -69,7 +73,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
       - name: Install Mitiq
         run: |
           python -m pip install --upgrade pip
@@ -88,7 +92,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
       - name: Install Mitiq
         run: |
           python -m pip install --upgrade pip
@@ -106,7 +110,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.8', '3.9', '3.10']
+        python-version: ["3.8", "3.9", "3.10"]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out mitiq
@@ -140,7 +144,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest, windows-latest]
-        python-version: ['3.8', '3.9', '3.10']
+        python-version: ["3.8", "3.9", "3.10"]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out mitiq
