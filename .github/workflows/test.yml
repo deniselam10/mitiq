@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - v0.18.0-branch
 
 jobs:
   validate:
@@ -31,6 +32,9 @@ jobs:
 
       - name: Check code style with Black
         run: make check-format
+
+      - name: Check code security with Bandit
+        run: make bandit
 
   docs:
     runs-on: ubuntu-latest
