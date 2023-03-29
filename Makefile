@@ -15,6 +15,10 @@ check-format:
 check-style:
 	flake8
 
+.PHONY: bandit
+bandit:
+	pip install bandit && bandit -c pyproject.toml -r . --confidence-level high -f screen -q; true
+
 .PHONY: check-types
 check-types:
 	mypy .
