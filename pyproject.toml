@@ -18,3 +18,15 @@ exclude = '''
   )/
 )
 '''
+
+[tool.bandit]
+exclude = [
+   "tests/*",
+   "test_*",
+   "*/tests/*",
+   "*/test_*"
+]
+
+exclude_dirs = [
+   "mitiq/interface/mitiq_pyquil/tests"
+]
