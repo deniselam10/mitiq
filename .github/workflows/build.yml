@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      # Add branch name here
       - v0.24.0-branch
 
 jobs:
@@ -33,6 +34,7 @@ jobs:
       - name: Check code style with Black
         run: make check-format
 
+      # Add Bandit tests here
       - name: Check code security with Bandit
         run: make bandit
 
