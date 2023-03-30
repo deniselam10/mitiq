@@ -27,6 +27,7 @@ warn_unused_configs = true
 [tool.bandit]
 exclude = [
    "tests",
+   "/tests/",
    "tests/*",
    "test_*",
    "*/tests/*",
@@ -36,3 +37,6 @@ exclude = [
 exclude_dirs = [
    "mitiq/interface/mitiq_pyquil/tests"
 ]
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*/test_*.py','*/test_*.py', '*/test_*.py']
