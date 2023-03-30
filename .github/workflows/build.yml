@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - master
-      # Add branch name here
       - v0.24.0-branch
 
 jobs:
